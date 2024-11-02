@@ -1,5 +1,7 @@
 package dtos;
+import lombok.Data;
 
+@Data
 public class EjercicioDisponibleDTO {
     private String grupoMuscular;
     private int nivelAerobico;

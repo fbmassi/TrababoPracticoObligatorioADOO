@@ -1,17 +1,19 @@
 package model;
+import lombok.Data;
 
+@Data
 public class RefuerzoEjercicio extends EjercicioDisponible {
     private EjercicioDisponible ejercicio;
 
     public void agregarSeries(int series) {
-        this.ejercicio.series += series;
+        this.ejercicio.setSeries(ejercicio.getSeries() + series);
     }
 
     public void agregarRepeticiones(int repeticiones) {
-        this.ejercicio.repeticiones += repeticiones;
+        this.ejercicio.setRepeticiones(ejercicio.getRepeticiones() + repeticiones);
     }
 
     public void agregarPeso(int peso) {
-        this.ejercicio.pesoAsignado += peso;
+        this.ejercicio.setPesoAsignado(ejercicio.getPesoAsignado() + peso);
     }
 }

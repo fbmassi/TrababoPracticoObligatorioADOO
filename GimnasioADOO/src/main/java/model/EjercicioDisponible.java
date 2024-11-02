@@ -1,15 +1,19 @@
 package model;
+import lombok.Data;
 
+@Data
 public class EjercicioDisponible {
     private GrupoMuscular grupoMuscular;
     private int nivelAerobico;
     private String nivelExigenciaMuscular;
-    int series;
-    int repeticiones;
-    float pesoAsignado;
+    private int series;
+    private int repeticiones;
+    private float pesoAsignado;
+    private String videoInstructivo;
+
 
     public void verVideoInstructivo() {
-        // Lógica para mostrar video instructivo
+        System.out.println(videoInstructivo);
     }
 
 }

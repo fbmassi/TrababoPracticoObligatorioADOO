@@ -1,5 +1,7 @@
 package dtos;
+import lombok.Data;
 
+@Data
 public class EjercicioRealizadoDTO {
     private EjercicioDisponibleDTO ejercicioARealizar;
     private int seriesRealizadas;

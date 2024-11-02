@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20e93d5-b504-4d37-bec5-b46c1cb07fde" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/DiaEntrenamientoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/EjercicioDisponibleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/EjercicioDisponibleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/EjercicioRealizadoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/EjercicioRealizadoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/ObjetivoPrincipalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/ObjetivoPrincipalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/RutinaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/RutinaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DiaEntrenamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DiaEntrenamiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/EjercicioDisponible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EjercicioDisponible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/EjercicioRealizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EjercicioRealizado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MantenerFigura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MantenerFigura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ObjetivoPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ObjetivoPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/RefuerzoEjercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RefuerzoEjercicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Rutina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,28 +32,41 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2o1cYpW7OLTXbfwGSeXtugpTQU5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/francobmassi/Documentos/FACULTAD/MATERIAS/3º TERCER AÑO/2º SEMESTRE/TrabajoADOO/TrababoPracticoObligatorioADOO/GimnasioADOO/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Franco&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/francobmassi/Documentos/FACULTAD/MATERIAS/3º TERCER AÑO/2º SEMESTRE/TrabajoADOO/TrababoPracticoObligatorioADOO/GimnasioADOO/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dtos" />
+      <recent name="model" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
