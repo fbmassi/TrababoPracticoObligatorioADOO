@@ -1,4 +1,5 @@
 package model;
+import dtos.EjercicioDisponibleDTO;
 import lombok.Data;
 
 @Data
@@ -16,4 +17,14 @@ public class EjercicioDisponible {
         System.out.println(videoInstructivo);
     }
 
+    public EjercicioDisponibleDTO toDTO() {
+        EjercicioDisponibleDTO dto = new EjercicioDisponibleDTO();
+        dto.setGrupoMuscular(grupoMuscular.name());
+        dto.setNivelAerobico(this.nivelAerobico);
+        dto.setNivelExigenciaMuscular(this.nivelExigenciaMuscular);
+        dto.setSeries(this.series);
+        dto.setRepeticiones(this.repeticiones);
+        dto.setPesoAsignado(this.pesoAsignado);
+        return dto;
+    }
 }

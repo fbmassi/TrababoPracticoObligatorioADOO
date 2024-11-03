@@ -9,4 +9,5 @@ public class EjercicioDisponibleDTO {
     private int series;
     private int repeticiones;
     private float pesoAsignado;
+    private String videoInstructivo;
 }

@@ -1,10 +1,13 @@
 package model;
 
+import dtos.DiaEntrenamientoDTO;
+import dtos.EjercicioDisponibleDTO;
+import dtos.EjercicioRealizadoDTO;
 import lombok.Data;
 
-import lombok.Data;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class DiaEntrenamiento {
@@ -17,19 +20,33 @@ public class DiaEntrenamiento {
         this.completado = false;
     }
 
-    public void comenzarDia() {
-        // Iniciar el entrenamiento del día, marcando los ejercicios como pendientes
+    public DiaEntrenamientoDTO comenzarDia() {
         System.out.println("Entrenamiento del día iniciado: " + fecha);
         this.completado = false;
+        return this.toDTO();
     }
 
-    public void completarEjercicio(EjercicioDisponible ejercicio) {
-        // Marcar un ejercicio específico como completado
-        // Aquí podríamos tener una lógica que busque el ejercicio en la lista y lo actualice
-        if (ejercicios.contains(ejercicio)) {
-            System.out.println("Ejercicio completado: " + ejercicio);
-            ejercicio.verVideoInstructivo(); // Mostrar video instructivo opcionalmente
-        } else {
+    public void completarEjercicio(EjercicioRealizadoDTO ejercicioDTO) {
+        boolean encontrado = false;
+
+        for (EjercicioDisponible ejercicio : ejercicios) {
+            if (ejercicio.getGrupoMuscular().equals(ejercicioDTO.getGrupoMuscular()) &&
+                    ejercicio.getNivelAerobico() == ejercicioDTO.getNivelAerobico() &&
+                    ejercicio.getNivelExigenciaMuscular().equals(ejercicioDTO.getNivelExigenciaMuscular()) &&
+                    ejercicio.getSeries() == ejercicioDTO.getSeries() &&
+                    ejercicio.getRepeticiones() == ejercicioDTO.getRepeticiones() &&
+                    ejercicio.getPesoAsignado() == ejercicioDTO.getPesoAsignado() &&
+                    ejercicio.getVideoInstructivo().equals(ejercicioDTO.getVideoInstructivo())) {
+
+                System.out.println("Ejercicio completado: " + ejercicioDTO);
+                ejercicio.verVideoInstructivo();
+                encontrado = true;
+                break;
+            }
+        }
+
+        // Si no se encontró el ejercicio, mostrar el mensaje
+        if (!encontrado) {
             System.out.println("Ejercicio no encontrado en la lista de hoy.");
         }
     }
@@ -44,5 +61,13 @@ public class DiaEntrenamiento {
         this.completado = true;
         guardarRegistroDia(); // Guardar el registro al finalizar
         System.out.println("Entrenamiento finalizado.");
+    }
+
+    public DiaEntrenamientoDTO toDTO() {
+        DiaEntrenamientoDTO dto = new DiaEntrenamientoDTO();
+        dto.setFecha(this.fecha);
+        dto.setEjercicios(ejercicios.stream().map(EjercicioDisponible::toDTO).collect(Collectors.toList()));
+        dto.setCompletado(this.completado);
+        return dto;
     }
 }

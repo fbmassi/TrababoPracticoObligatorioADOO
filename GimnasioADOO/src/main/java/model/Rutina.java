@@ -1,5 +1,7 @@
 package model;
 
+import dtos.DiaEntrenamientoDTO;
+import dtos.RutinaDTO;
 import lombok.Data;
 import java.util.List;
 
@@ -20,12 +22,12 @@ public class Rutina {
         System.out.println("Rutina actualizada con " + dias.size() + " días de entrenamiento.");
     }
 
-    public DiaEntrenamiento comenzarEntrenamientoDelDia() {
+    public DiaEntrenamientoDTO comenzarEntrenamientoDelDia() {
         for (DiaEntrenamiento dia : entrenamientos) {
             if (!dia.isCompletado()) {
                 dia.comenzarDia();
                 System.out.println("Comenzando entrenamiento del día: " + dia.getFecha());
-                return dia;
+                return dia.toDTO();
             }
         }
         System.out.println("Todos los días de entrenamiento han sido completados.");
@@ -46,5 +48,13 @@ public class Rutina {
             System.out.println("La rutina aún no se ha completado.");
         }
         return this.cumplida;
+    }
+
+    public RutinaDTO toDTO() {
+        RutinaDTO dto = new RutinaDTO();
+        dto.setEntrenamientos(entrenamientos.stream().map(DiaEntrenamiento::toDTO).collect(Collectors.toList()));
+        dto.setDuracionSemanas(this.duracionSemanas);
+        dto.setCumplida(this.cumplida);
+        return dto;
     }
 }
