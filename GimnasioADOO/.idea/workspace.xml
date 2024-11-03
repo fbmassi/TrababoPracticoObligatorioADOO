@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20e93d5-b504-4d37-bec5-b46c1cb07fde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/DiaEntrenamientoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/EjercicioDisponibleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/EstadoFisicoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/MedicionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/TrofeoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DiaEntrenamientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DiaEntrenamientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EjercicioDisponibleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EjercicioDisponibleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RutinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RutinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/DiaEntrenamientoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/DiaEntrenamientoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/EjercicioDisponibleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/EjercicioDisponibleDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DiaEntrenamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DiaEntrenamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/EjercicioDisponible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EjercicioDisponible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Rutina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +77,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

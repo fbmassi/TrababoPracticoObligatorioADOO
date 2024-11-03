@@ -4,11 +4,6 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-package dtos;
-
-import java.util.List;
-
-@Data
 public class SocioDTO {
     private int id;
     private int edad;

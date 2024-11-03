@@ -15,9 +15,6 @@
     </properties>
 
     <dependencies>
-        <!-- Otras dependencias del proyecto -->
-
-        <!-- Dependencia de Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

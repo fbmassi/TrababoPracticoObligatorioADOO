@@ -8,21 +8,21 @@ import model.DiaEntrenamiento;
 @Data
 public class DiaEntrenamientoController {
 
-    private DiaEntrenamiento diaEntrenamientoService;
+    private final DiaEntrenamiento diaEntrenamiento;
 
-    public DiaEntrenamientoController(DiaEntrenamiento diaEntrenamientoService) {
-        this.diaEntrenamientoService = diaEntrenamientoService;
+    public DiaEntrenamientoController(DiaEntrenamiento diaEntrenamiento) {
+        this.diaEntrenamiento = diaEntrenamiento;
     }
 
     public DiaEntrenamientoDTO comenzarDia() {
-        return diaEntrenamientoService.comenzarDia();
+        return diaEntrenamiento.comenzarDia();
     }
 
     public void completarEjercicio(EjercicioRealizadoDTO ejercicio) {
-        diaEntrenamientoService.completarEjercicio(ejercicio);
+        diaEntrenamiento.completarEjercicio(ejercicio);
     }
 
     public void finalizarEntrenamiento() {
-        diaEntrenamientoService.finalizarEntrenamiento();
+        diaEntrenamiento.finalizarEntrenamiento();
     }
 }

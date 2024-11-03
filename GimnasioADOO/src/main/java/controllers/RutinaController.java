@@ -9,8 +9,8 @@ public class RutinaController {
 
     private final Rutina rutina;
 
-    public RutinaController(Rutina rutinaService) {
-        this.rutina = rutinaService;
+    public RutinaController(Rutina rutina) {
+        this.rutina = rutina;
     }
 
     public RutinaDTO generarRutina(SocioDTO socio) {

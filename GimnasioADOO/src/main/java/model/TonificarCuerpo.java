@@ -2,9 +2,11 @@ package model;
 
 import dtos.SocioDTO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class TonificarCuerpo extends ObjetivoPrincipal {
     private float nivelMasaMuscularIdeal;
@@ -24,7 +26,6 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
 
     @Override
     public boolean evaluarCumplimiento(SocioDTO socio) {
-        // Evaluar cumplimiento al comparar el nivel de masa muscular y grasa corporal actuales con los ideales
         return socio.getMasaMuscular() >= nivelMasaMuscularIdeal &&
                 socio.getPorcentajeGrasa() <= porcentajeGrasaIdeal;
     }
