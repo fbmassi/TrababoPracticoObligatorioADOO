@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20e93d5-b504-4d37-bec5-b46c1cb07fde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dtos/TrofeoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DiaEntrenamientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DiaEntrenamientoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EjercicioDisponibleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EjercicioDisponibleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RutinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RutinaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/SocioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BajarPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TonificarCuerpo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,21 +35,6 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Franco&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/francobmassi/Documentos/FACULTAD/MATERIAS/3º TERCER AÑO/2º SEMESTRE/TrabajoADOO/TrababoPracticoObligatorioADOO/GimnasioADOO/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="dtos" />
-      <recent name="model" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,6 +45,29 @@
       <updated>1730040572244</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="agrega-socio" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
