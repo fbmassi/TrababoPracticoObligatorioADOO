@@ -1,15 +1,15 @@
 package dtos;
-
 import lombok.Data;
 import java.util.List;
 
 @Data
 public class SocioDTO {
-    private Integer edad;
+    private int id;
+    private int edad;
     private String sexoBiologico;
-    private Float altura;
-    private Medicion estadoFisico;
-    private ObjetivoPrincipal objetivoActual;
-    private List<Medicion> progreso;
-    private List<Trofeo> trofeos;
+    private float altura;
+    private EstadoFisicoDTO estadoFisico;
+    private ObjetivoPrincipalDTO objetivoActual;
+    private List<MedicionDTO> progreso;
+    private List<TrofeoDTO> trofeos;
 }
