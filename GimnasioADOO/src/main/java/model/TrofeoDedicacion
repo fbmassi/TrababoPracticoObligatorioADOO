@@ -1,9 +1,0 @@
-package model;
-
-public class TrofeoDedicacion {
-    private String nombre;
-    private String descripcion;
-    private Boolean otorgado;
-
-    public
-}
