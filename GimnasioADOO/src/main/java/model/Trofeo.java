@@ -17,7 +17,7 @@ abstract public class Trofeo {
         return null;
     }
 
-    public void otorgarTrofeo(Socio socio) {
+    public void otorgarTrofeo(SocioDTO socio) {
         //
     }
 
