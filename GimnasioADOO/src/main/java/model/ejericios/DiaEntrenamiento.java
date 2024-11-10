@@ -1,7 +1,6 @@
-package model;
+package model.ejericios;
 
 import dtos.DiaEntrenamientoDTO;
-import dtos.EjercicioDisponibleDTO;
 import dtos.EjercicioRealizadoDTO;
 import lombok.Data;
 

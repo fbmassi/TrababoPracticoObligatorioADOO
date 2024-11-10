@@ -3,7 +3,7 @@ package controllers;
 import dtos.RutinaDTO;
 import dtos.DiaEntrenamientoDTO;
 import dtos.SocioDTO;
-import model.Rutina;
+import model.ejericios.Rutina;
 
 public class RutinaController {
 

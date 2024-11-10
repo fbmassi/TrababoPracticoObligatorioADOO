@@ -3,7 +3,7 @@ package controllers;
 import dtos.DiaEntrenamientoDTO;
 import dtos.EjercicioRealizadoDTO;
 import lombok.Data;
-import model.DiaEntrenamiento;
+import model.ejericios.DiaEntrenamiento;
 
 @Data
 public class DiaEntrenamientoController {

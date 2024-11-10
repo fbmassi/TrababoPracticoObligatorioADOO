@@ -1,8 +1,6 @@
 package controllers;
 
-import dtos.MedicionDTO;
 import dtos.SocioDTO;
-import model.Medicion;
 
 public class MedicionController {
     private final Medicion medicion;

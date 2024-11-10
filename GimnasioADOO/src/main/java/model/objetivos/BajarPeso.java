@@ -1,8 +1,10 @@
-package model;
+package model.objetivos;
 
-import dtos.SocioDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import model.ejericios.DiaEntrenamiento;
+import model.ejericios.Rutina;
+import model.socio.Socio;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class BajarPeso extends ObjetivoPrincipal {
     private float pesoIdeal;
 
     @Override
-    public Rutina calcularRutina(SocioDTO socio) {
+    public Rutina calcularRutina(Socio socio) {
 
         this.pesoIdeal = calcularPesoIdeal(socio);
 
@@ -23,11 +25,11 @@ public class BajarPeso extends ObjetivoPrincipal {
     }
 
     @Override
-    public boolean evaluarCumplimiento(SocioDTO socio) {
+    public boolean evaluarCumplimiento(Socio socio) {
         return socio.getPeso() <= pesoIdeal;
     }
 
-    private float calcularPesoIdeal(SocioDTO socio) {
+    private float calcularPesoIdeal(Socio socio) {
         float altura = socio.getAltura() / 100;
         return socio.getSexoBiológico().equals("M") ? 22 * (altura * altura) : 21 * (altura * altura);
     }

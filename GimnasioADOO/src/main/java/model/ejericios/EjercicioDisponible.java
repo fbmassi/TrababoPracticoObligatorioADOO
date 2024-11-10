@@ -1,4 +1,4 @@
-package model;
+package model.ejericios;
 import dtos.EjercicioDisponibleDTO;
 import lombok.Data;
 

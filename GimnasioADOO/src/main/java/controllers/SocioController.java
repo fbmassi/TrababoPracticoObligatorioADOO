@@ -1,36 +1,34 @@
 package controllers;
 
 import dtos.SocioDTO;
-import model.Socio;
+import model.socio.Socio;
+import model.objetivos.ObjetivoPrincipal;
 
 public class SocioController {
 
     private final Socio socio;
 
-    public static SocioController getInstance() {
-        if (socioControlador == null) {
-            socioControlador = new socioControlador();
-        }
-        return socioControlador;
+    public SocioController(Socio socio) {
+        this.socio = socio;
     }
 
-    public Socio crearSocio(SocioDTO socioDTO) {
-        return new Socio(SocioDTO);
+    public SocioDTO setObjetivoPrincipal(ObjetivoPrincipal objetivo) {
+        socio.setObjetivoPrincipal(objetivo);
+        return socio.toDTO();
     }
 
-    public void SetObjetivoPrincipal(objetivo ObjetivoPrincipalDTO) {
-
+    public SocioDTO medirEstadoFisico() {
+        socio.medirEstadoFisico();
+        return socio.toDTO();
     }
 
-    public void verEstadoFisico() {
-
+    public SocioDTO autenticarse(String username, String contraseña) {
+        return socio.autenticarse(username, contraseña);
     }
 
-    public void autenticarse(username String, password String){
 
+    public SocioDTO cerrarSesion(SocioDTO socioDTO) {
+        return socio.cerrarSesion();
     }
 
-    public void cerrarsesion() {
-
-    }
 }

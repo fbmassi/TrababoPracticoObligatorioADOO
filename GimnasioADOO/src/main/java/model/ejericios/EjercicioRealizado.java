@@ -1,6 +1,4 @@
-package model;
-import lombok.Data;
-
+package model.ejericios;
 import lombok.Data;
 
 @Data

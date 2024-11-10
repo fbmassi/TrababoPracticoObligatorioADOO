@@ -1,20 +1,27 @@
-package model;
+package model.objetivos;
 
 import dtos.SocioDTO;
+import interfaces.IObserver;
 import lombok.Data;
+import model.ejericios.Rutina;
+import model.ejericios.DiaEntrenamiento;
+import model.ejericios.EjercicioDisponible;
+import model.socio.Socio;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 public abstract class ObjetivoPrincipal {
-    protected int diasEntrenamiento;
-    protected int duracionEntrenamiento;
+    private int diasEntrenamiento;
+    private int duracionEntrenamiento;
+    private Rutina rutina;
+    private List<IObserver> observadores;
 
-    public abstract Rutina calcularRutina(SocioDTO socio);
-    public abstract boolean evaluarCumplimiento(SocioDTO socio);
+    public abstract Rutina calcularRutina(Socio socio);
+    public abstract boolean evaluarCumplimiento(Socio socio);
 
-    protected List<DiaEntrenamiento> generarDiasDeEntrenamiento(SocioDTO socio, int diasSemana, int duracionMinutos, int nivelAerobico, String tipoExigencia) {
+    public List<DiaEntrenamiento> generarDiasDeEntrenamiento(Socio socio, int diasSemana, int duracionMinutos, int nivelAerobico, String tipoExigencia) {
         List<DiaEntrenamiento> dias = new ArrayList<>();
         for (int i = 0; i < diasSemana; i++) {
             DiaEntrenamiento dia = new DiaEntrenamiento();
@@ -24,10 +31,8 @@ public abstract class ObjetivoPrincipal {
         return dias;
     }
 
-    protected List<EjercicioDisponible> generarEjercicios(int duracion, int nivelAerobico, String tipoExigencia) {
-        // Genera ejercicios con las especificaciones indicadas (nivel aeróbico, exigencia)
+    public List<EjercicioDisponible> generarEjercicios(int duracion, int nivelAerobico, String tipoExigencia) {
         List<EjercicioDisponible> ejercicios = new ArrayList<>();
-        // Ejemplo de lógica para agregar ejercicios según criterios
         for (int i = 0; i < duracion / 15; i++) {
             EjercicioDisponible ejercicio = new EjercicioDisponible();
             ejercicio.setNivelAerobico(nivelAerobico);
@@ -39,4 +44,5 @@ public abstract class ObjetivoPrincipal {
         }
         return ejercicios;
     }
+
 }

@@ -1,8 +1,11 @@
-package model;
+package model.objetivos;
 
 import dtos.SocioDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import model.ejericios.DiaEntrenamiento;
+import model.ejericios.Rutina;
+import model.socio.Socio;
 
 import java.util.List;
 
@@ -13,7 +16,7 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
     private float porcentajeGrasaIdeal;
 
     @Override
-    public Rutina calcularRutina(SocioDTO socio) {
+    public Rutina calcularRutina(Socio socio) {
 
         this.nivelMasaMuscularIdeal = obtenerMasaMuscularIdeal(socio);
         this.porcentajeGrasaIdeal = obtenerPorcentajeGrasaIdeal(socio);
@@ -25,16 +28,17 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
     }
 
     @Override
-    public boolean evaluarCumplimiento(SocioDTO socio) {
+    public boolean evaluarCumplimiento(Socio socio) {
         return socio.getMasaMuscular() >= nivelMasaMuscularIdeal &&
-                socio.getPorcentajeGrasa() <= porcentajeGrasaIdeal;
+                socio.getPorcentajeGrasaCorporal() <= porcentajeGrasaIdeal;
     }
 
-    private float obtenerMasaMuscularIdeal(SocioDTO socio) {
+    private float obtenerMasaMuscularIdeal(Socio socio) {
         return socio.getSexoBiológico().equals("M") ? 30 : 25;
     }
 
-    private float obtenerPorcentajeGrasaIdeal(SocioDTO socio) {
+    private float obtenerPorcentajeGrasaIdeal(Socio socio) {
         return socio.getSexoBiológico().equals("M") ? 15 : 20;
     }
+
 }
