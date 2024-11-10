@@ -2,8 +2,8 @@ package model.objetivos;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import model.ejericios.DiaEntrenamiento;
-import model.ejericios.Rutina;
+import model.ejercicios.DiaEntrenamiento;
+import model.ejercicios.Rutina;
 import model.socio.Socio;
 
 import java.util.List;

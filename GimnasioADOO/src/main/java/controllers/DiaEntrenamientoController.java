@@ -1,9 +1,9 @@
 package controllers;
 
 import dtos.DiaEntrenamientoDTO;
-import dtos.EjercicioRealizadoDTO;
+import dtos.EjercicioARealizarDTO;
 import lombok.Data;
-import model.ejericios.DiaEntrenamiento;
+import model.ejercicios.DiaEntrenamiento;
 
 @Data
 public class DiaEntrenamientoController {
@@ -18,7 +18,7 @@ public class DiaEntrenamientoController {
         return diaEntrenamiento.comenzarDia();
     }
 
-    public void completarEjercicio(EjercicioRealizadoDTO ejercicio) {
+    public void completarEjercicio(EjercicioARealizarDTO ejercicio) {
         diaEntrenamiento.completarEjercicio(ejercicio);
     }
 

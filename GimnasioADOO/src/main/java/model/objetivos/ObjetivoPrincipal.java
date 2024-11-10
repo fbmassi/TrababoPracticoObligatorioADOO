@@ -1,11 +1,10 @@
 package model.objetivos;
 
-import dtos.SocioDTO;
 import interfaces.IObserver;
 import lombok.Data;
-import model.ejericios.Rutina;
-import model.ejericios.DiaEntrenamiento;
-import model.ejericios.EjercicioDisponible;
+import model.ejercicios.Rutina;
+import model.ejercicios.DiaEntrenamiento;
+import model.ejercicios.EjercicioDisponible;
 import model.socio.Socio;
 
 import java.util.ArrayList;

@@ -1,9 +1,8 @@
 package model.objetivos;
 
-import dtos.SocioDTO;
 import lombok.Data;
-import model.ejericios.Rutina;
-import model.ejericios.DiaEntrenamiento;
+import model.ejercicios.Rutina;
+import model.ejercicios.DiaEntrenamiento;
 import model.socio.Socio;
 
 import java.util.List;

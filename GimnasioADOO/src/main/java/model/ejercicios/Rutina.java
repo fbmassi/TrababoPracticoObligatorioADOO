@@ -1,4 +1,4 @@
-package model.ejericios;
+package model.ejercicios;
 
 import dtos.DiaEntrenamientoDTO;
 import dtos.RutinaDTO;

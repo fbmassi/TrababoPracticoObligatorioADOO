@@ -1,7 +1,7 @@
 package controllers;
 
 import lombok.Data;
-import model.ejericios.EjercicioDisponible;
+import model.ejercicios.EjercicioDisponible;
 
 @Data
 public class EjercicioDisponibleController {

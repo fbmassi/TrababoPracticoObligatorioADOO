@@ -1,9 +1,10 @@
 package dtos;
 import lombok.Data;
+import model.ejercicios.GrupoMuscular;
 
 @Data
 public class EjercicioDisponibleDTO {
-    private String grupoMuscular;
+    private GrupoMuscular grupoMuscular;
     private int nivelAerobico;
     private String nivelExigenciaMuscular;
     private int series;
