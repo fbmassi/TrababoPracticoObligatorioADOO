@@ -1,14 +1,7 @@
 package model.trofeos;
 
-import dtos.SocioDTO;
 import interfaces.IObservable;
-import model.objetivos.ObjetivoPrincipal;
 import model.socio.Socio;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 public class TrofeoDedicacion extends Trofeo {
     private String nombre;
@@ -17,6 +10,14 @@ public class TrofeoDedicacion extends Trofeo {
 
     public TrofeoDedicacion(String nombre, String descripcion) {
         super(nombre, descripcion);
+    }
+
+    public boolean verificarTrofeo(IObservable observable) {
+        if (observable instanceof Socio) {
+            Socio socio = (Socio) observable;
+            return socio.getObjetivoActual().evaluarCumplimiento(socio);
+        }
+        return false;
     }
 
     @Override
@@ -29,7 +30,9 @@ public class TrofeoDedicacion extends Trofeo {
     public void serNotifocadoPor(IObservable observable) {
         if (observable instanceof Socio) {
             Socio socio = (Socio) observable;
-            otorgarTrofeo(socio);
+            if (verificarTrofeo(observable)) {
+                otorgarTrofeo(socio);
+            }
         }
     }
 }

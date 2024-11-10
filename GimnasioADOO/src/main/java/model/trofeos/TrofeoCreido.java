@@ -17,6 +17,28 @@ public class TrofeoCreido extends Trofeo {
         super(nombre, descripcion);
     }
 
+    public boolean verificarTrofeo(IObservable observable) {
+        if (observable instanceof Socio) {
+            Socio socio = (Socio) observable;
+            List<HashMap<Date, HashMap<String, Float>>> progreso = socio.getProgreso();
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.MONTH, -1);
+            Date fechaLimite = calendar.getTime();
+            int contadorMediciones = 0;
+            for (int i = progreso.size() - 1; i >= 0; i--) {
+                Date fechaMedicion = progreso.get(i).keySet().iterator().next();
+                if (fechaMedicion.after(fechaLimite)) {
+                    contadorMediciones++;
+                } else {
+                    break;
+                }
+            }
+            return contadorMediciones == 3;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public void otorgarTrofeo(Socio socio) {
         socio.getTrofeos().add(this);
@@ -27,7 +49,9 @@ public class TrofeoCreido extends Trofeo {
     public void serNotifocadoPor(IObservable observable) {
         if (observable instanceof Socio) {
             Socio socio = (Socio) observable;
-            otorgarTrofeo(socio);
+            if (verificarTrofeo(observable)) {
+                otorgarTrofeo(socio);
+            }
         }
     }
 }

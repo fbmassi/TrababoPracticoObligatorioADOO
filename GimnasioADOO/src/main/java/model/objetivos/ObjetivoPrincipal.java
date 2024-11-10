@@ -12,15 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public abstract class ObjetivoPrincipal implements IObservable {
+public abstract class ObjetivoPrincipal {
     private int diasEntrenamiento;
     private int duracionEntrenamiento;
     private Rutina rutina;
-    protected List<IObserver> observadores;
 
     public abstract void calcularRutina(Socio socio);
 
-    public abstract void evaluarCumplimiento(Socio socio);
+    public abstract boolean evaluarCumplimiento(Socio socio);
 
     public abstract List<DiaEntrenamiento> generarDiasDeEntrenamiento(Socio socio, int totalDiasRutina, int diasPorSemana,
                                                              int duracionMinutos, int nivelAerobico, NivelExigencia nivelExigencia,

@@ -39,7 +39,7 @@ public class MantenerFigura extends ObjetivoPrincipal {
     }
 
     @Override
-    public void evaluarCumplimiento(Socio socio) {
+    public boolean evaluarCumplimiento(Socio socio) {
         float pesoActual = socio.getPeso();
         return pesoActual >= rangoPesoIdeal - 2 && pesoActual <= rangoPesoIdeal + 2;
     }
@@ -91,20 +91,6 @@ public class MantenerFigura extends ObjetivoPrincipal {
 
     private float calcularRangoPesoIdeal(float pesoInicial) {
         return pesoInicial;
-    }
-
-    public void notificarObservadores() {
-        for (IObserver observador : observadores) {
-            observador.serNotifocadoPor(this);
-        }
-    }
-
-    public void agregarObservador(IObserver o) {
-        observadores.add(o);
-    }
-
-    public void eliminarObservador(IObserver o) {
-        observadores.remove(o);
     }
 
 }

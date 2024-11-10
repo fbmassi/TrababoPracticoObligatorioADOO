@@ -38,12 +38,8 @@ public class BajarPeso extends ObjetivoPrincipal {
     }
 
     @Override
-    public void evaluarCumplimiento(Socio socio) {
-        if (socio.getPeso() <= pesoIdeal) {
-            for (IObserver observador : observadores) {
-                observador.serNotifocadoPor(socio);
-            }
-        }
+    public boolean evaluarCumplimiento(Socio socio) {
+        return socio.getPeso() <= pesoIdeal;
     }
 
     @Override
@@ -94,20 +90,6 @@ public class BajarPeso extends ObjetivoPrincipal {
     private float calcularPesoIdeal(Socio socio) {
         float altura = socio.getAltura() / 100;
         return socio.getSexoBiológico().equals("M") ? 22 * (altura * altura) : 21 * (altura * altura);
-    }
-
-    public void notificarObservadores() {
-        for (IObserver observador : observadores) {
-            observador.serNotifocadoPor(this);
-        }
-    }
-
-    public void agregarObservador(IObserver o) {
-        observadores.add(o);
-    }
-
-    public void eliminarObservador(IObserver o) {
-        observadores.remove(o);
     }
 
 }

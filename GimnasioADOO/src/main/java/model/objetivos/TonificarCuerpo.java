@@ -43,7 +43,7 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
     }
 
     @Override
-    public void evaluarCumplimiento(Socio socio) {
+    public boolean evaluarCumplimiento(Socio socio) {
         return socio.getMasaMuscular() >= nivelMasaMuscularIdeal &&
                 socio.getPorcentajeGrasaCorporal() <= porcentajeGrasaIdeal;
     }
@@ -99,20 +99,6 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
 
     private float obtenerPorcentajeGrasaIdeal(Socio socio) {
         return socio.getSexoBiológico().equals("M") ? 15 : 20;
-    }
-
-    public void notificarObservadores() {
-        for (IObserver observador : observadores) {
-            observador.serNotifocadoPor(this);
-        }
-    }
-
-    public void agregarObservador(IObserver o) {
-        observadores.add(o);
-    }
-
-    public void eliminarObservador(IObserver o) {
-        observadores.remove(o);
     }
 
 }

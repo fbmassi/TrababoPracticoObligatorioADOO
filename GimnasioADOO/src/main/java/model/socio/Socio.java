@@ -7,9 +7,7 @@ import interfaces.IObserver;
 import lombok.Data;
 import model.objetivos.ObjetivoPrincipal;
 import model.trofeos.Trofeo;
-import model.trofeos.TrofeoCreido;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -44,8 +42,6 @@ public class Socio implements IObservable {
         this.porcentajeGrasaCorporal = medidor.medirEstadoFisico(this).get(1);
         this.masaMuscular = medidor.medirEstadoFisico(this).get(2);
 
-        objetivoActual.evaluarCumplimiento(this);
-
         HashMap<String, Float> mediciones = new HashMap<>();
         mediciones.put("Peso", peso);
         mediciones.put("MasaMuscular", masaMuscular);
@@ -55,9 +51,7 @@ public class Socio implements IObservable {
             put(new Date(), mediciones);
         }});
 
-        if (getCantMedicionesPorMes() == 3) {
-            notificarObservadores();
-        }
+        notificarObservadores();
 
         return toDTO();
     }
@@ -91,22 +85,8 @@ public class Socio implements IObservable {
     }
 
     public SocioDTO toDTO() {
-        return new SocioDTO(edad, sexoBiológico, altura, peso, masaMuscular, porcentajeGrasaCorporal, objetivoActual, progreso, trofeos, sesionIniciada);
+        return new SocioDTO(edad, sexoBiológico, altura, peso, masaMuscular,
+                porcentajeGrasaCorporal, objetivoActual, progreso, trofeos, sesionIniciada);
     }
 
-    private int getCantMedicionesPorMes(){
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, -1);
-        Date fechaLimite = calendar.getTime();
-        int contadorMediciones = 0;
-        for (int i = progreso.size() - 1; i >= 0; i--) {
-            Date fechaMedicion = progreso.get(i).keySet().iterator().next();
-            if (fechaMedicion.after(fechaLimite)) {
-                contadorMediciones++;
-            } else {
-                break;
-            }
-        }
-        return contadorMediciones;
-    }
 }

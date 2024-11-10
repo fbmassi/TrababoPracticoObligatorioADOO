@@ -10,10 +10,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Data
-public class Rutina implements IObservable {
+public class Rutina {
     private List<DiaEntrenamiento> entrenamientos;
     private int duracionDias;
-    private List<IObserver> observadores;
     private Estado estado;
 
     public Rutina() {
@@ -60,21 +59,6 @@ public class Rutina implements IObservable {
         System.out.println("La rutina ha sido finalizada.");
         return this.toDTO();
     }
-
-    public void notificarObservadores() {
-        for (IObserver observador : observadores) {
-            observador.serNotifocadoPor(this);
-        }
-    }
-
-    public void agregarObservador(IObserver o) {
-        observadores.add(o);
-    }
-
-    public void eliminarObservador(IObserver o) {
-        observadores.remove(o);
-    }
-
 
     public RutinaDTO toDTO() {
         RutinaDTO dto = new RutinaDTO();
