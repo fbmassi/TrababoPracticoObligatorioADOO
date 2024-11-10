@@ -6,13 +6,13 @@ import lombok.Data;
 public class EjercicioDisponible {
     private GrupoMuscular grupoMuscular;
     private int nivelAerobico;
-    private String nivelExigenciaMuscular;
+    private NivelExigencia nivelExigenciaMuscular;
     private int series;
     private int repeticiones;
     private float pesoAsignado;
     private String videoInstructivo;
 
-    public EjercicioDisponible(GrupoMuscular grupoMuscular, int nivelAerobico, String nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
+    public EjercicioDisponible(GrupoMuscular grupoMuscular, int nivelAerobico, NivelExigencia nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
         this.grupoMuscular = grupoMuscular;
         this.nivelAerobico = nivelAerobico;
         this.nivelExigenciaMuscular = nivelExigenciaMuscular;
@@ -25,7 +25,7 @@ public class EjercicioDisponible {
     public EjercicioDisponible() {
     }
 
-    public static EjercicioDisponible crearEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico, String nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
+    public static EjercicioDisponible crearEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico, NivelExigencia nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
         return new EjercicioDisponible(grupoMuscular, nivelAerobico, nivelExigenciaMuscular, series, repeticiones, pesoAsignado, videoInstructivo);
     }
 

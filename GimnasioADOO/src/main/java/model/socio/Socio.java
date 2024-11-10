@@ -2,6 +2,7 @@ package model.socio;
 
 import dtos.SocioDTO;
 import interfaces.IMedidorAdapter;
+import interfaces.IObservable;
 import interfaces.IObserver;
 import lombok.Data;
 import model.objetivos.ObjetivoPrincipal;
@@ -14,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Data
-public class Socio {
+public class Socio implements IObservable {
     private int edad;
     private String sexoBiológico;
     private float altura;
@@ -30,19 +31,20 @@ public class Socio {
     private List<Trofeo> trofeos;
     private List<IObserver> observadores;
 
-    // Establece un nuevo objetivo principal
     public SocioDTO setObjetivoPrincipal(ObjetivoPrincipal objetivo) {
         this.objetivoActual = objetivo;
-        notificarObservadores();
+        objetivoActual.calcularRutina(this);
+        setObjetivoActual(objetivo);
         return toDTO();
     }
 
-    // Mide el estado físico utilizando el adaptador de medición
     public SocioDTO medirEstadoFisico() {
 
         this.peso = medidor.medirEstadoFisico(this).get(0);
         this.porcentajeGrasaCorporal = medidor.medirEstadoFisico(this).get(1);
         this.masaMuscular = medidor.medirEstadoFisico(this).get(2);
+
+        objetivoActual.evaluarCumplimiento(this);
 
         HashMap<String, Float> mediciones = new HashMap<>();
         mediciones.put("Peso", peso);
@@ -53,7 +55,9 @@ public class Socio {
             put(new Date(), mediciones);
         }});
 
-        notificarObservadores();
+        if (getCantMedicionesPorMes() == 3) {
+            notificarObservadores();
+        }
 
         return toDTO();
     }
@@ -80,7 +84,7 @@ public class Socio {
         observadores.remove(o);
     }
 
-    private void notificarObservadores() {
+    public void notificarObservadores() {
         for (IObserver observador : observadores) {
             observador.serNotifocadoPor(this);
         }
@@ -88,5 +92,21 @@ public class Socio {
 
     public SocioDTO toDTO() {
         return new SocioDTO(edad, sexoBiológico, altura, peso, masaMuscular, porcentajeGrasaCorporal, objetivoActual, progreso, trofeos, sesionIniciada);
+    }
+
+    private int getCantMedicionesPorMes(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -1);
+        Date fechaLimite = calendar.getTime();
+        int contadorMediciones = 0;
+        for (int i = progreso.size() - 1; i >= 0; i--) {
+            Date fechaMedicion = progreso.get(i).keySet().iterator().next();
+            if (fechaMedicion.after(fechaLimite)) {
+                contadorMediciones++;
+            } else {
+                break;
+            }
+        }
+        return contadorMediciones;
     }
 }

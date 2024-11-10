@@ -13,13 +13,11 @@ public class SocioController {
     }
 
     public SocioDTO setObjetivoPrincipal(ObjetivoPrincipal objetivo) {
-        socio.setObjetivoPrincipal(objetivo);
-        return socio.toDTO();
+        return socio.setObjetivoPrincipal(objetivo);
     }
 
     public SocioDTO medirEstadoFisico() {
-        socio.medirEstadoFisico();
-        return socio.toDTO();
+        return socio.medirEstadoFisico();
     }
 
     public SocioDTO autenticarse(String username, String contraseña) {

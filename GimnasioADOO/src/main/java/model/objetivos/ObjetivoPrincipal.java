@@ -1,47 +1,31 @@
 package model.objetivos;
 
+import interfaces.IObservable;
 import interfaces.IObserver;
 import lombok.Data;
-import model.ejercicios.Rutina;
-import model.ejercicios.DiaEntrenamiento;
-import model.ejercicios.EjercicioDisponible;
+import model.ejercicios.*;
 import model.socio.Socio;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public abstract class ObjetivoPrincipal {
+public abstract class ObjetivoPrincipal implements IObservable {
     private int diasEntrenamiento;
     private int duracionEntrenamiento;
     private Rutina rutina;
-    private List<IObserver> observadores;
+    protected List<IObserver> observadores;
 
-    public abstract Rutina calcularRutina(Socio socio);
-    public abstract boolean evaluarCumplimiento(Socio socio);
+    public abstract void calcularRutina(Socio socio);
 
-    public List<DiaEntrenamiento> generarDiasDeEntrenamiento(Socio socio, int diasSemana, int duracionMinutos, int nivelAerobico, String tipoExigencia) {
-        List<DiaEntrenamiento> dias = new ArrayList<>();
-        for (int i = 0; i < diasSemana; i++) {
-            DiaEntrenamiento dia = new DiaEntrenamiento();
-            dia.setEjercicios(generarEjercicios(duracionMinutos, nivelAerobico, tipoExigencia));
-            dias.add(dia);
-        }
-        return dias;
-    }
+    public abstract void evaluarCumplimiento(Socio socio);
 
-    public List<EjercicioDisponible> generarEjercicios(int duracion, int nivelAerobico, String tipoExigencia) {
-        List<EjercicioDisponible> ejercicios = new ArrayList<>();
-        for (int i = 0; i < duracion / 15; i++) {
-            EjercicioDisponible ejercicio = new EjercicioDisponible();
-            ejercicio.setNivelAerobico(nivelAerobico);
-            ejercicio.setNivelExigenciaMuscular(tipoExigencia);
-            ejercicio.setSeries(3);
-            ejercicio.setRepeticiones(12);
-            ejercicio.setPesoAsignado(20);
-            ejercicios.add(ejercicio);
-        }
-        return ejercicios;
-    }
+    public abstract List<DiaEntrenamiento> generarDiasDeEntrenamiento(Socio socio, int totalDiasRutina, int diasPorSemana,
+                                                             int duracionMinutos, int nivelAerobico, NivelExigencia nivelExigencia,
+                                                             LocalDate fechaInicio);
 
+
+    public abstract List<EjercicioARealizar> generarEjercicios(GrupoMuscular grupoMuscular, int duracion, int nivelAerobico, NivelExigencia tipoExigencia);
 }

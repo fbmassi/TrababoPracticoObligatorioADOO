@@ -1,5 +1,6 @@
 package model.trofeos;
 
+import interfaces.IObservable;
 import interfaces.IObserver;
 import lombok.Data;
 import model.socio.Socio;
@@ -15,8 +16,6 @@ public abstract class Trofeo implements IObserver {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-
-    public abstract boolean verificarTrofeo(Socio socio);
 
     public abstract void otorgarTrofeo(Socio socio);
 

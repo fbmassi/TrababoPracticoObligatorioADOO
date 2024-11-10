@@ -1,62 +1,101 @@
 package model.ejercicios;
 
-import dtos.DiaEntrenamientoDTO;
 import dtos.RutinaDTO;
+import interfaces.IObservable;
+import interfaces.IObserver;
 import lombok.Data;
+import model.socio.Socio;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Data
-public class Rutina {
+public class Rutina implements IObservable {
     private List<DiaEntrenamiento> entrenamientos;
-    private int duracionSemanas;
-    private boolean cumplida;
+    private int duracionDias;
+    private List<IObserver> observadores;
+    private Estado estado;
 
-    public Rutina(List<DiaEntrenamiento> entrenamientos, int duracionSemanas) {
-        this.entrenamientos = entrenamientos;
-        this.duracionSemanas = duracionSemanas;
-        this.cumplida = false;
+    public Rutina() {
+        this.estado = Estado.NO_INICIADO;
     }
 
-    public void actualizarRutina(List<DiaEntrenamiento> dias) {
-        this.entrenamientos = dias;
-        System.out.println("Rutina actualizada con " + dias.size() + " días de entrenamiento.");
+    public static Rutina crearRutina() {
+        return new Rutina();
     }
 
-    public DiaEntrenamientoDTO comenzarEntrenamientoDelDia() {
+    public RutinaDTO iniciarRutina() {
+        this.estado = Estado.INICIADO;
+        return this.toDTO();
+    }
+
+    public RutinaDTO reforzarRutina(int series, int repeticiones, int peso) {
         for (DiaEntrenamiento dia : entrenamientos) {
-            if (!dia.isCompletado()) {
-                dia.comenzarDia();
-                System.out.println("Comenzando entrenamiento del día: " + dia.getFecha());
-                return dia.toDTO();
+            for (EjercicioARealizar ejercicio : dia.getEjercicios()) {
+                EjercicioDisponible ejercicioDisponible = ejercicio.getEjercicio();
+                RefuerzoEjercicio refuerzo = getRefuerzoEjercicio(series, ejercicio, ejercicioDisponible);
+                refuerzo.agregarRepeticiones(repeticiones);
+                refuerzo.agregarPeso(peso);
+                ejercicio.setEjercicio(refuerzo);
             }
         }
-        System.out.println("Todos los días de entrenamiento han sido completados.");
-        return null;
+        System.out.println("Rutina reforzada.");
+        return this.toDTO();
     }
 
-    public void verProgresoRutina() {
-        long diasCompletados = entrenamientos.stream().filter(DiaEntrenamiento::isCompletado).count();
-        System.out.println("Progreso de la rutina: " + diasCompletados + "/" + entrenamientos.size() + " días completados.");
+    private static RefuerzoEjercicio getRefuerzoEjercicio(int series, EjercicioARealizar ejercicio, EjercicioDisponible ejercicioDisponible) {
+        RefuerzoEjercicio refuerzo = new RefuerzoEjercicio(ejercicio.getEjercicio().getGrupoMuscular(),
+                                            ejercicioDisponible.getNivelAerobico(),
+                                            ejercicioDisponible.getNivelExigenciaMuscular(),
+                                            ejercicioDisponible.getSeries(),
+                                            ejercicioDisponible.getRepeticiones(),
+                                            ejercicioDisponible.getPesoAsignado(),
+                                            ejercicioDisponible.getVideoInstructivo());
+        refuerzo.agregarSeries(series);
+        return refuerzo;
     }
 
-    public boolean evaluarCumplimientoRutina() {
-        boolean todosCompletados = entrenamientos.stream().allMatch(DiaEntrenamiento::isCompletado);
-        if (todosCompletados) {
-            this.cumplida = true;
-            System.out.println("La rutina ha sido completada.");
-        } else {
-            System.out.println("La rutina aún no se ha completado.");
+    public RutinaDTO finalizarRutina() {
+        this.estado = Estado.FINALIZADO;
+        System.out.println("La rutina ha sido finalizada.");
+        return this.toDTO();
+    }
+
+    public void notificarObservadores() {
+        for (IObserver observador : observadores) {
+            observador.serNotifocadoPor(this);
         }
-        return this.cumplida;
     }
+
+    public void agregarObservador(IObserver o) {
+        observadores.add(o);
+    }
+
+    public void eliminarObservador(IObserver o) {
+        observadores.remove(o);
+    }
+
 
     public RutinaDTO toDTO() {
         RutinaDTO dto = new RutinaDTO();
         dto.setEntrenamientos(entrenamientos.stream().map(DiaEntrenamiento::toDTO).collect(Collectors.toList()));
-        dto.setDuracionSemanas(this.duracionSemanas);
-        dto.setCumplida(this.cumplida);
+        dto.setDuracionSemanas(this.duracionDias);
         return dto;
     }
+
+    public boolean verificarAsistencia() {
+        int diasAsistidos = 0;
+        int totalDias = 0;
+        Socio socio = new Socio();
+        List<DiaEntrenamiento> diasEtrenamiento = socio.getObjetivoActual().getRutina().getEntrenamientos();
+        for (DiaEntrenamiento diaEntrenamiento : diasEtrenamiento) {
+            totalDias++;
+            if (diaEntrenamiento.getEstado().equals(Estado.INICIADO)
+                    || diaEntrenamiento.getEstado().equals(Estado.FINALIZADO)) {
+                diasAsistidos++;
+            }
+        }
+        return diasAsistidos == totalDias;
+    }
+
 }

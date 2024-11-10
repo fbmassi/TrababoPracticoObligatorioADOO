@@ -3,6 +3,6 @@ import model.socio.*;
 
 public interface IObserver {
 
-    void serNotifocadoPor(Socio observable);
+    void serNotifocadoPor(IObservable observable);
 
 }

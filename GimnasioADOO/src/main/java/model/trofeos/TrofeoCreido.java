@@ -1,6 +1,6 @@
 package model.trofeos;
 
-import dtos.SocioDTO;
+import interfaces.IObservable;
 import model.socio.Socio;
 
 import java.util.Calendar;
@@ -18,37 +18,16 @@ public class TrofeoCreido extends Trofeo {
     }
 
     @Override
-    public boolean verificarTrofeo(Socio socio) {
-
-        List<HashMap<Date, HashMap<String, Float>>> progreso = socio.getProgreso();
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, -1); // Obtener la fecha del mes anterior
-        Date fechaLimite = calendar.getTime();
-
-        int contadorMediciones = 0;
-        for (int i = progreso.size() - 1; i >= 0; i--) {
-            Date fechaMedicion = progreso.get(i).keySet().iterator().next();
-            if (fechaMedicion.after(fechaLimite)) {
-                contadorMediciones++;
-            } else {
-                break;
-            }
-        }
-
-        return contadorMediciones == 3;
-    }
-
-    @Override
     public void otorgarTrofeo(Socio socio) {
         socio.getTrofeos().add(this);
         otorgado = true;
     }
 
     @Override
-    public void serNotifocadoPor(Socio observable) {
-        if (verificarTrofeo(observable)) {
-            otorgarTrofeo(observable);
+    public void serNotifocadoPor(IObservable observable) {
+        if (observable instanceof Socio) {
+            Socio socio = (Socio) observable;
+            otorgarTrofeo(socio);
         }
     }
 }

@@ -8,7 +8,10 @@ public class RefuerzoEjercicio extends EjercicioDisponible {
 
     private EjercicioDisponible ejercicio;
 
-    public RefuerzoEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico, String nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
+    public RefuerzoEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico,
+                             NivelExigencia nivelExigenciaMuscular, int series,
+                             int repeticiones, float pesoAsignado,
+                             String videoInstructivo) {
         super(grupoMuscular, nivelAerobico, nivelExigenciaMuscular, series, repeticiones, pesoAsignado, videoInstructivo);
     }
 
