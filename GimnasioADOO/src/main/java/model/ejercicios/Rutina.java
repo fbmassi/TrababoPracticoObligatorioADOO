@@ -67,7 +67,7 @@ public class Rutina {
         return dto;
     }
 
-    public boolean verificarAsistencia() {
+    public boolean verificarCumplimiento() {
         int diasAsistidos = 0;
         int totalDias = 0;
         Socio socio = new Socio();

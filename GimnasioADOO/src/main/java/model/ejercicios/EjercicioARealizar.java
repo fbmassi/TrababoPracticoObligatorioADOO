@@ -17,7 +17,7 @@ public class EjercicioARealizar {
         this.pesoAsignado = ejercicio.getPesoAsignado();
     }
 
-    public EjercicioARealizarDTO mercarCompletado() {
+    public EjercicioARealizarDTO marcarCompletado() {
         this.completado = true;
         return this.toDTO();
     }

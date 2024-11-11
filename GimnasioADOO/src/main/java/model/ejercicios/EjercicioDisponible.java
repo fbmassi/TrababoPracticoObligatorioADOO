@@ -25,8 +25,8 @@ public class EjercicioDisponible {
     public EjercicioDisponible() {
     }
 
-    public static EjercicioDisponible crearEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico, NivelExigencia nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
-        return new EjercicioDisponible(grupoMuscular, nivelAerobico, nivelExigenciaMuscular, series, repeticiones, pesoAsignado, videoInstructivo);
+    public EjercicioDisponibleDTO crearEjercicio(GrupoMuscular grupoMuscular, int nivelAerobico, NivelExigencia nivelExigenciaMuscular, int series, int repeticiones, float pesoAsignado, String videoInstructivo) {
+        return new EjercicioDisponible(grupoMuscular, nivelAerobico, nivelExigenciaMuscular, series, repeticiones, pesoAsignado, videoInstructivo).toDTO();
     }
 
     public EjercicioDisponibleDTO toDTO() {

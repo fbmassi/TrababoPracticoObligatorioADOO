@@ -26,7 +26,7 @@ public class TrofeoConstancia extends Trofeo {
             if (!socio.getObjetivoActual().getRutina().getEntrenamientos().isEmpty()) {
                 return !LocalDate.now().isBefore(socio.getObjetivoActual().getRutina().getEntrenamientos()
                         .get(socio.getObjetivoActual().getRutina().getEntrenamientos().size() - 1).getFecha())
-                        && socio.getObjetivoActual().getRutina().verificarAsistencia();
+                        && socio.getObjetivoActual().getRutina().verificarCumplimiento();
             }
         }
         return false;
