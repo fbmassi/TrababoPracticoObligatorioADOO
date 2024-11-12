@@ -38,7 +38,6 @@ public class TonificarCuerpo extends ObjetivoPrincipal {
         Rutina rutina = new Rutina();
         rutina.setEntrenamientos(dias);
         rutina.setDuracionDias(totalDiasRutina);
-        rutina.setObservadores(getObservadores());
         setRutina(rutina);
     }
 

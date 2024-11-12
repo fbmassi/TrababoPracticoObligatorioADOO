@@ -35,7 +35,7 @@ public class Main {
 
         SocioController socioController = new SocioController(ana);
 
-        SocioDTO usuarioAutenticado = socioController.autenticarse("ana123", "contraseña");
+        SocioDTO usuarioAutenticado = socioController.autenticarse("ana", "contraseña");
         if (usuarioAutenticado != null) {
             System.out.println("Usuario autenticado correctamente");
         } else {

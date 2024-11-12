@@ -34,7 +34,6 @@ public class MantenerFigura extends ObjetivoPrincipal {
         Rutina rutina = new Rutina();
         rutina.setEntrenamientos(dias);
         rutina.setDuracionDias(totalDiasRutina);
-        rutina.setObservadores(getObservadores());
         setRutina(rutina);
     }
 

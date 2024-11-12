@@ -8,6 +8,7 @@ import lombok.Data;
 import model.objetivos.ObjetivoPrincipal;
 import model.trofeos.Trofeo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -25,9 +26,9 @@ public class Socio implements IObservable {
     private String username;
     private String clave;
     private IMedidorAdapter medidor;
-    private List<HashMap<Date, HashMap<String, Float>>> progreso;
-    private List<Trofeo> trofeos;
-    private List<IObserver> observadores;
+    private List<HashMap<Date, HashMap<String, Float>>> progreso = new ArrayList<>();
+    private List<Trofeo> trofeos = new ArrayList<>();
+    private List<IObserver> observadores = new ArrayList<>();
 
     public SocioDTO setObjetivoPrincipal(ObjetivoPrincipal objetivo) {
         this.objetivoActual = objetivo;
