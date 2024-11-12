@@ -1,12 +1,14 @@
 package controllers;
 
 import dtos.SocioDTO;
+import lombok.Data;
 import model.socio.Socio;
 import model.objetivos.ObjetivoPrincipal;
 
+@Data
 public class SocioController {
 
-    private final Socio socio;
+    private Socio socio;
 
     public SocioController(Socio socio) {
         this.socio = socio;
@@ -24,9 +26,10 @@ public class SocioController {
         return socio.autenticarse(username, contraseña);
     }
 
-
     public SocioDTO cerrarSesion(SocioDTO socioDTO) {
-        return socio.cerrarSesion();
+        SocioDTO socioSesionCerrada = socio.cerrarSesion();
+        socio = null;
+        return socioSesionCerrada;
     }
 
 }

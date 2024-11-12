@@ -19,4 +19,6 @@ public abstract class Trofeo implements IObserver {
 
     public abstract void otorgarTrofeo(Socio socio);
 
+    public abstract boolean verificarTrofeo(IObservable observable);
+
 }
