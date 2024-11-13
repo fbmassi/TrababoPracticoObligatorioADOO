@@ -70,8 +70,7 @@ public class Main {
         //Fijamos el objetivo
         socioController.setObjetivoPrincipal(bajarPeso);
 
-        //El socio se mide
-        SocioDTO estadoActual = socioController.medirEstadoFisico();
+        //El socio se mideSocioDTO estadoActual = socioController.medirEstadoFisico();
         System.out.println("Estado actual después de la medición: " + estadoActual);
 
         ana.setPeso(57);
@@ -110,9 +109,11 @@ public class Main {
         for (DiaEntrenamiento diaEntrenamiento: diaEntrenamientos) {
             ejercicioController.setDiaEntrenamiento(diaEntrenamiento);
             List<EjercicioARealizar> ejercicioARealizars = diaEntrenamiento.getEjercicios();
+            System.out.println(ejercicioController.comenzarDiaEntrenamiento());
             for (EjercicioARealizar ejercicioARealizar: ejercicioARealizars) {
                 ejercicioController.setEjercicioARealizar(ejercicioARealizar);
                 ejercicioController.marcarCompletado();
+                //System.out.println(ejercicioARealizar);
             }
         }
 

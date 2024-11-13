@@ -15,6 +15,7 @@ public class EjercicioARealizar {
         this.seriesRealizadas = 0;
         this.repeticionesRealizadas = 0;
         this.pesoAsignado = ejercicio.getPesoAsignado();
+        this.completado = false;
     }
 
     public EjercicioARealizarDTO marcarCompletado() {

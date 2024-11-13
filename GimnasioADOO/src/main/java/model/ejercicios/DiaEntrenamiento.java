@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 @Data
 public class DiaEntrenamiento {
     private List<EjercicioARealizar> ejercicios;
-    private Estado estado;
     private LocalDate fecha;
+    private Estado estado;
 
     public DiaEntrenamiento(LocalDate fecha) {
         this.fecha = fecha;

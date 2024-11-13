@@ -70,8 +70,7 @@ public class Rutina {
     public boolean verificarCumplimiento() {
         int diasAsistidos = 0;
         int totalDias = 0;
-        Socio socio = new Socio();
-        List<DiaEntrenamiento> diasEtrenamiento = socio.getObjetivoActual().getRutina().getEntrenamientos();
+        List<DiaEntrenamiento> diasEtrenamiento = getEntrenamientos();
         for (DiaEntrenamiento diaEntrenamiento : diasEtrenamiento) {
             totalDias++;
             if (diaEntrenamiento.getEstado().equals(Estado.INICIADO)

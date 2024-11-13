@@ -23,12 +23,15 @@ public class TrofeoConstancia extends Trofeo {
         if (observable instanceof Socio) {
             Socio socio = (Socio) observable;
             if (!socio.getObjetivoActual().getRutina().getEntrenamientos().isEmpty()) {
-                return !LocalDate.now().isBefore(socio.getObjetivoActual().getRutina().getEntrenamientos()
-                        .get(socio.getObjetivoActual().getRutina().getEntrenamientos().size() - 1).getFecha())
-                        && socio.getObjetivoActual().getRutina().verificarCumplimiento();
+                return socio.getObjetivoActual().getRutina().verificarCumplimiento();
             }
         }
         return false;
+        /*
+        !LocalDate.now().isBefore(socio.getObjetivoActual().getRutina().getEntrenamientos()
+                        .get(socio.getObjetivoActual().getRutina().getEntrenamientos().size() - 1).getFecha())
+                        &&
+         */
     }
 
     @Override
