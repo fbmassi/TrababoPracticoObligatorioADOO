@@ -6,7 +6,6 @@ import model.socio.Socio;
 public class TrofeoDedicacion extends Trofeo {
     private String nombre;
     private String descripcion;
-    private boolean otorgado;
 
     public TrofeoDedicacion(String nombre, String descripcion) {
         super(nombre, descripcion);
@@ -22,8 +21,11 @@ public class TrofeoDedicacion extends Trofeo {
 
     @Override
     public void otorgarTrofeo(Socio socio) {
-        socio.getTrofeos().add(this);
-        otorgado = true;
+        boolean existeTrofeo = socio.getTrofeos().stream()
+                .anyMatch(trofeo -> trofeo.getNombre().equals(this.getNombre()));
+        if (!existeTrofeo) {
+            socio.getTrofeos().add(this);
+        }
     }
 
     @Override

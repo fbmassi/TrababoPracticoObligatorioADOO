@@ -4,12 +4,14 @@ import dtos.DiaEntrenamientoDTO;
 import dtos.EjercicioDisponibleDTO;
 import dtos.EjercicioARealizarDTO;
 import dtos.RutinaDTO;
+import lombok.Data;
 import model.ejercicios.DiaEntrenamiento;
 import model.ejercicios.EjercicioARealizar;
 import model.ejercicios.EjercicioDisponible;
 import model.ejercicios.*;
 import model.ejercicios.Rutina;
 
+@Data
 public class EjercicioController {
     private Rutina rutina;
     private DiaEntrenamiento diaEntrenamiento;

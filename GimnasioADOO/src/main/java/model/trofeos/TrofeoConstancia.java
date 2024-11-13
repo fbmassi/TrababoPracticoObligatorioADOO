@@ -14,7 +14,6 @@ import java.util.List;
 public class TrofeoConstancia extends Trofeo {
     private String nombre;
     private String descripcion;
-    private boolean otorgado;
 
     public TrofeoConstancia(String nombre, String descripcion) {
         super(nombre, descripcion);
@@ -34,15 +33,20 @@ public class TrofeoConstancia extends Trofeo {
 
     @Override
     public void otorgarTrofeo(Socio socio) {
-        socio.getTrofeos().add(this);
-        otorgado = true;
+        boolean existeTrofeo = socio.getTrofeos().stream()
+                .anyMatch(trofeo -> trofeo.getNombre().equals(this.getNombre()));
+        if (!existeTrofeo) {
+            socio.getTrofeos().add(this);
+        }
     }
 
     @Override
     public void serNotifocadoPor(IObservable observable) {
         if (observable instanceof Socio) {
             Socio socio = (Socio) observable;
-            otorgarTrofeo(socio);
+            if (verificarTrofeo(observable)) {
+                otorgarTrofeo(socio);
+            }
         }
     }
 }

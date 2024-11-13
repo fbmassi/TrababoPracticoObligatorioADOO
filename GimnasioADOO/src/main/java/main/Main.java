@@ -1,7 +1,12 @@
 package main;
 
+import controllers.EjercicioController;
 import interfaces.IMedidorAdapter;
 import interfaces.IObserver;
+import lombok.Data;
+import model.ejercicios.DiaEntrenamiento;
+import model.ejercicios.EjercicioARealizar;
+import model.ejercicios.Rutina;
 import model.mediciones.Medidor;
 import model.objetivos.BajarPeso;
 import model.objetivos.MantenerFigura;
@@ -32,9 +37,9 @@ public class Main {
         ObjetivoPrincipal mantenerFigura = new MantenerFigura();
 
         // Instanciar trofeos
-        Trofeo trofeoCreido = new TrofeoCreido("Constante y al punto", "Has realizado al menos 3 mediciones en el último mes");
-        Trofeo trofeoDedicacion = new TrofeoDedicacion("Objetivo cumplido", "Has cumplido tu objetivo principal");
-        Trofeo trofeoConstancia = new TrofeoConstancia("Indomable", "Has completado todas las sesiones de tu rutina");
+        Trofeo trofeoCreido = new TrofeoCreido("Trofeo al creido: Constante y al punto", "Has realizado al menos 3 mediciones en el último mes");
+        Trofeo trofeoDedicacion = new TrofeoDedicacion("Trofeo a la Dedicación: Objetivo cumplido", "Has cumplido tu objetivo principal");
+        Trofeo trofeoConstancia = new TrofeoConstancia("Trofeo a la constancia: Indomable", "Has completado todas las sesiones de tu rutina");
         List<IObserver> observers = new ArrayList<>();
         observers.add(trofeoConstancia);
         observers.add(trofeoDedicacion);
@@ -47,7 +52,7 @@ public class Main {
         ana.setClave("contraseña");
         ana.setEdad(25);
         ana.setSexoBiológico("F");
-        ana.setAltura(1.65f);
+        ana.setAltura(165f);
         ana.setMedidor(medidor);
         ana.setObservadores(observers);
 
@@ -62,12 +67,15 @@ public class Main {
             System.out.println("Credenciales incorrectas");
         }
 
+        //Fijamos el objetivo
+        socioController.setObjetivoPrincipal(bajarPeso);
+
         //El socio se mide
         SocioDTO estadoActual = socioController.medirEstadoFisico();
         System.out.println("Estado actual después de la medición: " + estadoActual);
 
-        //Fijamos el objetivo
-        socioController.setObjetivoPrincipal(bajarPeso);
+        ana.setPeso(57);
+        ana.notificarObservadores();
 
         //Cerramos sesion
         socioController.cerrarSesion(usuarioAutenticado);
@@ -79,28 +87,36 @@ public class Main {
         juan.setClave("12345");
         juan.setEdad(30);
         juan.setSexoBiológico("M");
-        juan.setAltura(1.75f);
+        juan.setAltura(175f);
         juan.setMedidor(medidor);
         juan.setObservadores(observers);
 
         socioController.setSocio(juan);
 
+        socioController.setObjetivoPrincipal(mantenerFigura);
 
-        for (int i = 0; i < 10; i++) {
-            // Medir estado físico de Ana
-            socioController.medirEstadoFisico();
+        socioController.medirEstadoFisico();
+        socioController.medirEstadoFisico();
+        socioController.medirEstadoFisico();
 
-            // Medir estado físico de Juan
-            socioController.medirEstadoFisico();
+        socioController.setObjetivoPrincipal(tonificarCuerpo);
 
-            // Medir estado físico de Juan
-            socioController.medirEstadoFisico();
+        Rutina rutinaJuan = juan.getObjetivoActual().getRutina();
+        EjercicioController ejercicioController = new EjercicioController();
+        ejercicioController.setRutina(rutinaJuan);
 
-            // Cambiar objetivo de Ana
-            if (i == 5) {
-                socioController.setObjetivoPrincipal(tonificarCuerpo);
+        List<DiaEntrenamiento> diaEntrenamientos = rutinaJuan.getEntrenamientos();
+
+        for (DiaEntrenamiento diaEntrenamiento: diaEntrenamientos) {
+            ejercicioController.setDiaEntrenamiento(diaEntrenamiento);
+            List<EjercicioARealizar> ejercicioARealizars = diaEntrenamiento.getEjercicios();
+            for (EjercicioARealizar ejercicioARealizar: ejercicioARealizars) {
+                ejercicioController.setEjercicioARealizar(ejercicioARealizar);
+                ejercicioController.marcarCompletado();
             }
         }
+
+        juan.notificarObservadores();
 
         // Verificar trofeos
         System.out.println("Trofeos de Ana: " + ana.getTrofeos());

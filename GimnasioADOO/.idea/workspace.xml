@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20e93d5-b504-4d37-bec5-b46c1cb07fde" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/SocioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/SocioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EjercicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EjercicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/trofeos/Trofeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/trofeos/Trofeo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoConstancia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoCreido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
