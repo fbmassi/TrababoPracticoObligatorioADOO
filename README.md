@@ -24,7 +24,7 @@ To develop a personalized workout tracking system enabling users to:
 
 ### Class Diagram
 
-[Include the final class diagram of the system here, highlighting the design patterns used]
+![](Imagenes/DiagramaDeClases.png)
 
 ### Design Patterns Used
 
@@ -86,7 +86,7 @@ Desarrollar un sistema de seguimiento de entrenamiento personalizado que permita
 
 ### Diagrama de Clases
 
-[Incluir aquí el diagrama de clases final del sistema, destacando los patrones de diseño utilizados]
+![](Imagenes/DiagramaDeClases.png)
 
 ### Patrones de Diseño Utilizados
 
