@@ -26,12 +26,12 @@ To develop a personalized workout tracking system enabling users to:
 
 ![](Imagenes/DiagramaDeClases.png)
 
-### Design Patterns Used
+### Design Patterns Used and Their Justifications
 
-* **Decorator:** To enhance exercises in a user's routine.
-* **Strategy:** To encapsulate different objectives a client may have.
-* **Observer:** To notify users when they achieve their goals.
-* **Adapter:** For users to integrate with external measurement systems.
+* **Strategy Pattern ('Objetivo' Class):** We've selected the Strategy pattern to handle the diversity of user goals. By allowing the system to dynamically choose different algorithms for generating workouts based on the goal (weight loss, muscle gain, maintenance), we achieve greater flexibility and adaptability. This pattern enables us to encapsulate different algorithms for solving the same problem, which in this case is creating a workout routine.
+* **Adapter Pattern ('Medidor' Class):** To integrate data from external measurement devices, we've employed the Adapter pattern. This pattern allows us to create a common interface between our system and the external system, adapting the data to our needs without modifying the external system's code.
+* **Observer Pattern ('Trofeo' Class):** As each trophy is awarded based on events occurring in other classes, it's impractical for the Trophy class to periodically check for changes. In this situation, the Observer pattern is ideal for notifying users about earning trophies. By subscribing Trophy objects to specific events (such as completing a routine or achieving a goal), we can trigger actions automatically when the necessary conditions are met.
+* **Decorator Pattern ('RecuerzoEjercicio' Class):** We've used the Decorator pattern to add flexibility to exercise definitions. By wrapping an ExerciseAvailable object with a decorator, we can dynamically modify its properties (sets, repetitions, weight) without altering its base class.
 
 ### Technologies Used
 
@@ -88,12 +88,12 @@ Desarrollar un sistema de seguimiento de entrenamiento personalizado que permita
 
 ![](Imagenes/DiagramaDeClases.png)
 
-### Patrones de Diseño Utilizados
+### Patrones de Diseño Utilizados y sus Justificaciones
 
-* **Decorator:** Para reforzar los ejercicios de la rutina de un usuario.
-* **Strategy:** Para encapsular diferentes ojetivos que pueda llegar a tener el cliente.
-* **Observer:** Para notificar a los usuarios cuando alcanzan sus objetivos.
-* **Adapter:** Para que el usuario pueda medirse con un sistema externo.
+* **Patrón Strategy (Objetivo)**: Hemos seleccionado el patrón Strategy para gestionar la diversidad de objetivos de los usuarios. El patrón nos permite elegir distintos algoritmos para resolver el mismo problema, que en este caso es la creación de la rutina de entrenamiento.Al permitir que el sistema elija dinámicamente diferentes algoritmos para generar rutinas en función del objetivo (bajar de peso, tonificar, mantener), logramos una mayor flexibilidad y adaptabilidad.
+* **Patrón Adapter (Medidor)**: Para integrar los datos provenientes de dispositivos externos de medición, hemos utilizado el patrón Adapter. Este patrón nos permite crear una interfaz común entre nuestro sistema y el sistema externo, adaptando los datos a nuestras necesidades sin modificar el código del sistema externo.
+* **Patrón Observer (Trofeo)**:  Como cada trofeo se otorga ante eventos que se realizan en otras clases, no es viable que la clase Trofeo esté consultando periódicamente si hubo algún cambio. En esta situacion, el patrón Observer resulta ideal para notificar a los usuarios sobre la obtención de trofeos. Al suscribir los objetos Trofeo a eventos específicos (como completar una rutina o alcanzar un objetivo), podemos desencadenar acciones automáticamente cuando se cumplen las condiciones necesarias.
+* **Patrón Decorator (Refuerzo de Ejercicio)**: Hemos empleado el patrón Decorator para añadir flexibilidad a la definición de ejercicios. Al envolver un objeto EjercicioDisponible con un decorador, podemos modificar dinámicamente sus propiedades (series, repeticiones, peso) sin alterar su clase base.
 
 ### Tecnologías Utilizadas
 
