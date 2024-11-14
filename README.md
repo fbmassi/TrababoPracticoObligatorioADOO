@@ -1,14 +1,12 @@
 # Coleman Fitness Center - Trabajo Práctico Obligatorio
 
-## Introducción
-
 ![](Imagenes/LogoUADE.svg)
 
 Este proyecto, desarrollado como parte del Trabajo Práctico Obligatorio para la materia de **Proceso de Desarrollo de Software** en la **Universidad Argentina de la Empresa**, tiene como objetivo modelar un sistema de seguimiento de entrenamiento personal para un gimnasio, siguiendo una serie de patrones de diseño. El sistema, denominado GymPal, está diseñado para brindar a los usuarios una experiencia personalizada y motivadora, ayudándolos a alcanzar sus objetivos de fitness.
 
 ## Equipo de Desarrollo
 
-* Franco Massi Baltasar
+* Franco Baltasar Massi
 * Juan Martín Garateche
 
 ### Fecha de Entrega
@@ -48,9 +46,13 @@ Desarrollar un sistema de seguimiento de entrenamiento personalizado que permita
 * **Sistema de trofeos:** Otorga trofeos a los usuarios por alcanzar sus objetivos.
 * **Notificaciones:** Envía notificaciones a los usuarios a través de correo electrónico.
   
-### Conclusiones
+### Contribuciones
 
-Este proyecto ha permitido aplicar los conocimientos adquiridos en la materia para desarrollar una solución práctica y eficiente para el seguimiento de entrenamiento personal. Se han utilizado patrones de diseño para mejorar la modularidad y mantenibilidad del código.
+Este proyecto fue desarrollado para la materia **Proceso de Desarrollo de Software** como un documento académico para el programa de Ingeniería en Informática en UADE. Las contribuciones a este repositorio no están abiertas, ya que se trata de un proyecto académico. Sin embargo, se permite descargar y explorar el repositorio con fines educativos.
+
+### Licencia
+
+Este proyecto está licenciado para uso académico y no comercial únicamente. La redistribución y el uso en formas de fuente y binario, con o sin modificaciones, están permitidos para fines educativos. Se prohíbe el uso comercial, distribución o sublicencia sin permiso explícito.
 
 ### Agradecimientos
 
