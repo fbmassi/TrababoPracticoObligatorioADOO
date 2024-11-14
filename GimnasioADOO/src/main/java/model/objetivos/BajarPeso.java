@@ -25,7 +25,7 @@ public class BajarPeso extends ObjetivoPrincipal {
         int diasPorSemana = 3;
         int duracionMinutos = 60;
         int nivelAerobico = 8;
-        NivelExigencia nivelExigencia = NivelExigencia.MEDIA;
+        NivelExigencia nivelExigencia = NivelExigencia.BAJA;
 
         List<DiaEntrenamiento> dias = generarDiasDeEntrenamiento(socio, totalDiasRutina, diasPorSemana,
                 duracionMinutos, nivelAerobico, nivelExigencia, LocalDate.now());

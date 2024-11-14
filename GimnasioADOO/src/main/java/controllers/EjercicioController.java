@@ -13,6 +13,7 @@ import model.ejercicios.Rutina;
 
 @Data
 public class EjercicioController {
+
     private Rutina rutina;
     private DiaEntrenamiento diaEntrenamiento;
     private EjercicioARealizar ejercicioARealizar;
