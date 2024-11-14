@@ -1,4 +1,4 @@
-# Coleman Fitness Center - Mandatory Project
+# Coleman Fitness Center - Mandatory Project (English README 🇺🇸)
 
 ![](Imagenes/LogoUADE.svg)
 
@@ -60,7 +60,7 @@ We would like to thank **UADE** and the professor, **Matias Damian Stricagnoli**
 
 ---
 
-# Coleman Fitness Center - Trabajo Práctico Obligatorio 
+# Coleman Fitness Center - Trabajo Práctico Obligatorio (README en español 🇦🇷)
 
 ![](Imagenes/LogoUADE.svg)
 
