@@ -2,9 +2,9 @@
 
 ## Introducción
 
-Este proyecto, desarrollado como parte del Trabajo Práctico Obligatorio para la materia de **Proceso de Desarrollo de Software** en la **Universidad Argentina de la Empresa**, tiene como objetivo modelar un sistema de seguimiento de entrenamiento personal para un gimnasio, siguiendo una serie de patrones de diseño. El sistema, denominado GymPal, está diseñado para brindar a los usuarios una experiencia personalizada y motivadora, ayudándolos a alcanzar sus objetivos de fitness.
+![](Imagenes/LogoUADE.svg)
 
-[LogoUADE]
+Este proyecto, desarrollado como parte del Trabajo Práctico Obligatorio para la materia de **Proceso de Desarrollo de Software** en la **Universidad Argentina de la Empresa**, tiene como objetivo modelar un sistema de seguimiento de entrenamiento personal para un gimnasio, siguiendo una serie de patrones de diseño. El sistema, denominado GymPal, está diseñado para brindar a los usuarios una experiencia personalizada y motivadora, ayudándolos a alcanzar sus objetivos de fitness.
 
 ## Equipo de Desarrollo
 
@@ -54,4 +54,4 @@ Este proyecto ha permitido aplicar los conocimientos adquiridos en la materia pa
 
 ### Agradecimientos
 
-Agradecemos a [Nombre del profesor o institución] por su guía y apoyo durante el desarrollo de este proyecto.
+Agradecemos a **UADE** y al profesor, **Matias Damian Stricagnoli**, por su guía y apoyo durante el desarrollo de este proyecto.
