@@ -27,11 +27,6 @@ public class TrofeoConstancia extends Trofeo {
             }
         }
         return false;
-        /*
-        !LocalDate.now().isBefore(socio.getObjetivoActual().getRutina().getEntrenamientos()
-                        .get(socio.getObjetivoActual().getRutina().getEntrenamientos().size() - 1).getFecha())
-                        &&
-         */
     }
 
     @Override
@@ -49,6 +44,7 @@ public class TrofeoConstancia extends Trofeo {
             Socio socio = (Socio) observable;
             if (verificarTrofeo(observable)) {
                 otorgarTrofeo(socio);
+                getNotificador().enviarNotificacion(socio, this);
             }
         }
     }

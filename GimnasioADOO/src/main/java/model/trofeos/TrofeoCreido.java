@@ -53,6 +53,7 @@ public class TrofeoCreido extends Trofeo {
             Socio socio = (Socio) observable;
             if (verificarTrofeo(observable)) {
                 otorgarTrofeo(socio);
+                getNotificador().enviarNotificacion(socio, this);
             }
         }
     }

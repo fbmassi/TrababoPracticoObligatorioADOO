@@ -15,6 +15,7 @@ public abstract class Trofeo implements IObserver {
     public Trofeo(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.notificador = new FirebaseNotification();
     }
 
     public abstract void otorgarTrofeo(Socio socio);
