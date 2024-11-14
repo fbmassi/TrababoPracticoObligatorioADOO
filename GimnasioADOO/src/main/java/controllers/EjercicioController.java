@@ -50,7 +50,6 @@ public class EjercicioController {
         return ejercicioARealizar.toDTO();
     }
 
-    // Marca el progreso de un ejercicio realizado y devuelve su DTO
     public EjercicioARealizarDTO marcarCompletado() {
         return ejercicioARealizar.marcarCompletado();
     }

@@ -50,6 +50,7 @@ public class Rutina {
                                             ejercicioDisponible.getRepeticiones(),
                                             ejercicioDisponible.getPesoAsignado(),
                                             ejercicioDisponible.getVideoInstructivo());
+        refuerzo.setEjercicio(ejercicioDisponible);
         refuerzo.agregarSeries(series);
         return refuerzo;
     }
@@ -64,6 +65,7 @@ public class Rutina {
         RutinaDTO dto = new RutinaDTO();
         dto.setEntrenamientos(entrenamientos.stream().map(DiaEntrenamiento::toDTO).collect(Collectors.toList()));
         dto.setDuracionSemanas(this.duracionDias);
+        dto.setEstado(estado);
         return dto;
     }
 

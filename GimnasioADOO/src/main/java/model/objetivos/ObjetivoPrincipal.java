@@ -26,5 +26,5 @@ public abstract class ObjetivoPrincipal {
                                                              LocalDate fechaInicio);
 
 
-    public abstract List<EjercicioARealizar> generarEjercicios(GrupoMuscular grupoMuscular, int duracion, int nivelAerobico, NivelExigencia tipoExigencia);
+    public abstract List<EjercicioARealizar> generarEjercicios(int duracion, int nivelAerobico, NivelExigencia tipoExigencia);
 }

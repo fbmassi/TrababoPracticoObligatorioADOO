@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c20e93d5-b504-4d37-bec5-b46c1cb07fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EjercicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EjercicioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dtos/RutinaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dtos/RutinaDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ejercicios/DiaEntrenamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ejercicios/DiaEntrenamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ejercicios/EjercicioARealizar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ejercicios/EjercicioARealizar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ejercicios/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ejercicios/Rutina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/trofeos/TrofeoConstancia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/objetivos/BajarPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/objetivos/BajarPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/objetivos/MantenerFigura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/objetivos/MantenerFigura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/objetivos/ObjetivoPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/objetivos/ObjetivoPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/objetivos/TonificarCuerpo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/objetivos/TonificarCuerpo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,16 +96,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

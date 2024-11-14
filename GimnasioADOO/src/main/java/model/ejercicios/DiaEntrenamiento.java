@@ -33,6 +33,7 @@ public class DiaEntrenamiento {
     public DiaEntrenamientoDTO toDTO() {
         DiaEntrenamientoDTO dto = new DiaEntrenamientoDTO();
         dto.setFecha(this.fecha);
+        dto.setEstado(estado);
         dto.setEjercicios(ejercicios.stream().map(EjercicioARealizar::toDTO).collect(Collectors.toList()));
         return dto;
     }

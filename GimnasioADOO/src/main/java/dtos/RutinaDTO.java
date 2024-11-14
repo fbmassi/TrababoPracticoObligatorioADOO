@@ -1,5 +1,6 @@
 package dtos;
 import lombok.Data;
+import model.ejercicios.Estado;
 
 import java.util.List;
 
@@ -7,5 +8,5 @@ import java.util.List;
 public class RutinaDTO {
     private List<DiaEntrenamientoDTO> entrenamientos;
     private int duracionSemanas;
-    private boolean cumplida;
+    private Estado estado;
 }

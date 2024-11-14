@@ -51,9 +51,7 @@ public class BajarPeso extends ObjetivoPrincipal {
             if (fechaActual.getDayOfWeek() != DayOfWeek.SUNDAY) {
                 if (diasPorSemanaGenerados < diasPorSemana) {
                     DiaEntrenamiento dia = new DiaEntrenamiento(fechaActual);
-                    Random random = new Random();
-                    dia.setEjercicios(generarEjercicios(GrupoMuscular.values()[random.nextInt(GrupoMuscular.values().length)],
-                            duracionMinutos, nivelAerobico, tipoExigencia));
+                    dia.setEjercicios(generarEjercicios(duracionMinutos, nivelAerobico, tipoExigencia));
                     dias.add(dia);
                     diasGenerados++;
                     diasPorSemanaGenerados++;
@@ -72,15 +70,21 @@ public class BajarPeso extends ObjetivoPrincipal {
     }
 
     @Override
-    public List<EjercicioARealizar> generarEjercicios(GrupoMuscular grupoMuscular, int duracion, int nivelAerobico, NivelExigencia tipoExigencia) {
+    public List<EjercicioARealizar> generarEjercicios(int duracion, int nivelAerobico, NivelExigencia tipoExigencia) {
         List<EjercicioARealizar> ejercicios = new ArrayList<>();
         for (int i = 0; i < duracion / 15; i++) {
+            GrupoMuscular[] grupos = GrupoMuscular.values();
+            Random random = new Random();
+            int randomIndex = random.nextInt(grupos.length);
+            GrupoMuscular grupoMuscular = grupos[randomIndex];
             EjercicioDisponible ejercicio = new EjercicioDisponible();
+            ejercicio.setGrupoMuscular(grupoMuscular);
             ejercicio.setNivelAerobico(nivelAerobico);
             ejercicio.setNivelExigenciaMuscular(tipoExigencia);
-            ejercicio.setSeries(3);
-            ejercicio.setRepeticiones(12);
-            ejercicio.setPesoAsignado(20);
+            ejercicio.setSeries(4);
+            ejercicio.setRepeticiones(15);
+            ejercicio.setPesoAsignado(30);
+            ejercicio.setVideoInstructivo("videoEjemplo.com");
             ejercicios.add(new EjercicioARealizar(ejercicio));
         }
         return ejercicios;
